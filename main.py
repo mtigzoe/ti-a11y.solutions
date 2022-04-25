@@ -53,6 +53,7 @@ def UserGuideMenuSelectionDisplay():
     print("I) Integral User Guide")
     print("S) Statistics User Guide")
     print("A) Algebra User Guide")
+    print("H) How to use")
     print("B) Back")
 
 def RealNumberInstructionsMenu(): 
@@ -188,7 +189,8 @@ def UserGuideMenuSelection():
             
         elif UserGuideOptions == "a" or UserGuideOptions == "algebra":
             UserGuide.AlgebraInstructions()
-
+        elif UserGuideOptions == "h" or UserGuideOptions  == "how":
+            UserGuide.HowtoUseInstructions()
         elif UserGuideOptions   == "o" or UserGuideOptions == "options":    
             UserGuideMenuSelectionDisplay()
         elif UserGuideOptions   == "b" or UserGuideOptions == "back":
@@ -264,9 +266,13 @@ def RealModeFunction():
         elif equation == "b" or equation == "back":
             previous = 0
             run_real_mode = False
-
+        
         else:
             if previous == 0:
+                if equation[0] == "*" or equation[0] == "/" \
+                    or equation[0] == "%":
+
+                    equation = "0" + equation
                 previous = eval(equation)
             else:
                 previous = eval(str(previous) + equation)
@@ -301,18 +307,17 @@ def simple_derivative():
 
             run_simple_mode = False            
                             
+
         else:
-
             if previous == 0:
+                if equation[0] == "*" or equation[0] == "/" \
+                    or equation[0] == "%":
 
+                    equation = "0" + equation
                 previous = eval(equation)
-
-                previous = previous
-
             else:
-
                 previous = eval(str(previous) + equation)
-
+        
 def power_derivative(): 
     print("\nType your equation in power derivative mode:\n")
     x = Symbol('x') 
@@ -344,17 +349,15 @@ def power_derivative():
             run_power_mode = False                            
         
         else:
-
             if previous == 0:
+                if equation[0] == "*" or equation[0] == "/" \
+                    or equation[0] == "%":
 
+                    equation = "0" + equation
                 previous = eval(equation)
-
-                previous = previous
-
             else:
-
                 previous = eval(str(previous) + equation)
-
+        
 def product_derivative():
     print("\nType your equation in product derivative mode:\n")
     x = Symbol('x') 
@@ -385,17 +388,15 @@ def product_derivative():
 
         
         else:
-
             if previous == 0:
+                if equation[0] == "*" or equation[0] == "/" \
+                    or equation[0] == "%":
 
+                    equation = "0" + equation
                 previous = eval(equation)
-
-                previous = previous
-
             else:
-
                 previous = eval(str(previous) + equation)
-
+        
 def quotient_derivative():
     print("\nType your equation in quotient derivative mode:\n")
     x = Symbol('x') 
@@ -425,17 +426,15 @@ def quotient_derivative():
             run_quotient_mode = False            
         
         else:
-
             if previous == 0:
+                if equation[0] == "*" or equation[0] == "/" \
+                    or equation[0] == "%":
 
+                    equation = "0" + equation
                 previous = eval(equation)
-
-                previous = previous
-
             else:
-
                 previous = eval(str(previous) + equation)
-
+        
 def chain_derivative():
     print("\nType your equation in chain derivative mode:\n")
     x = Symbol('x') 
@@ -463,19 +462,16 @@ def chain_derivative():
 
             run_chain_mode = False            
 
-        
         else:
-
             if previous == 0:
+                if equation[0] == "*" or equation[0] == "/" \
+                    or equation[0] == "%":
 
+                    equation = "0" + equation
                 previous = eval(equation)
-
-                previous = previous
-
             else:
-
                 previous = eval(str(previous) + equation)
-
+        
 def exponential_derivative():
     print("\nType your equation in exponential mode:\n")
     x = Symbol('x') 
@@ -504,19 +500,16 @@ def exponential_derivative():
 
             run_exponential_mode = False            
 
-        
         else:
-
             if previous == 0:
+                if equation[0] == "*" or equation[0] == "/" \
+                    or equation[0] == "%":
 
+                    equation = "0" + equation
                 previous = eval(equation)
-
-                previous = previous
-
             else:
-
                 previous = eval(str(previous) + equation)
-
+        
 def partial_derivative():
     print("\nType your equation in partial derivative mode:\n")
     x, y = symbols('x y')
@@ -548,17 +541,15 @@ def partial_derivative():
 
         
         else:
-
             if previous == 0:
+                if equation[0] == "*" or equation[0] == "/" \
+                    or equation[0] == "%":
 
+                    equation = "0" + equation
                 previous = eval(equation)
-
-                previous = previous
-
             else:
-
                 previous = eval(str(previous) + equation)
-
+        
 
 
 def multivariable_derivative(): 
@@ -592,17 +583,15 @@ def multivariable_derivative():
 
         
         else:
-
             if previous == 0:
+                if equation[0] == "*" or equation[0] == "/" \
+                    or equation[0] == "%":
 
+                    equation = "0" + equation
                 previous = eval(equation)
-
-                previous = previous
-
             else:
-
                 previous = eval(str(previous) + equation)
-
+        
     
 def integral_mode(): 
     print("\nType your equation in integral mode:\n")
@@ -661,21 +650,17 @@ def integral_mode():
                     previous = resultwlh        
                 else:
                     previous += resultwlh
-
-
         
         else:
-
             if previous == 0:
+                if equation[0] == "*" or equation[0] == "/" \
+                    or equation[0] == "%":
 
+                    equation = "0" + equation
                 previous = eval(equation)
-
-                previous = previous
-
             else:
-
                 previous = eval(str(previous) + equation)
-
+        
 def statistics_mode(): 
     print("\nType your equation in statistics mode:\n")
 
@@ -704,15 +689,15 @@ def statistics_mode():
             run_statistics_mode = False 
             
         else:
-
             if previous == 0:
+                if equation[0] == "*" or equation[0] == "/" \
+                    or equation[0] == "%":
 
+                    equation = "0" + equation
                 previous = eval(equation)
-
             else:
-
                 previous = eval(str(previous) + equation)
-    
+        
 
 def equationSolver(string_):
     try:
@@ -761,19 +746,17 @@ def algebra_solver_function():
 
             else:     
                 previous += solution
-                   
+                
         else:
-
             if previous == 0:
+                if equation[0] == "*" or equation[0] == "/" \
+                    or equation[0] == "%":
 
+                    equation = "0" + equation
                 previous = eval(equation)
-
-                previous = previous
-
             else:
-
                 previous = eval(str(previous) + equation)
-
+        
 def simplify_factor():
 
     print("\nType your equation in simlifying/factoring mode:\n")
@@ -800,18 +783,18 @@ def simplify_factor():
             previous = 0
         elif equation == "b" or equation == "back":
             previous = 0
-            run_algebra_simplify_factor = False       
+            run_algebra_simplify_factor = False               
+
         else:
-
             if previous == 0:
+                if equation[0] == "*" or equation[0] == "/" \
+                    or equation[0] == "%":
 
+                    equation = "0" + equation
                 previous = eval(equation)
-
             else:
-
                 previous = eval(str(previous) + equation)
+        
 
-#mode_menu()
 
 mode_selection_function()
-
